@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Movie Recommender</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			function checkGenres()
+			{
+				var genre1 = document.forms["new-user-form"]["genre1"].value;
+				var genre2 = document.forms["new-user-form"]["genre2"].value;
+				if(genre1 == genre2)
+				{
+					alert("Please select two unique genres.");
+					return false;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div name = "top-section">
+			<div name = "home-button"  class = "container text-center" style = "padding-top:25px;">
+				<h2>Movie Recommender</h2>
+			</div>
+			<!-- HIDE THIS IF THE USER IS NOT LOGGED IN-->
+			<div name = "logout">
+				<div name = "logout-button" class = "container text-right" style = "padding-bottom:25px;">
+					<a href = "logout" class="btn btn-primary">Log out</a>
+				</div>
+			</div>
+		</div>
+		<div name = "taskbar">
+			<nav class="navbar navbar-expand-sm bg-light justify-content-center">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="profile.html">My Profile</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="recommendations.html">Recommendations</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="modifyrating.html">Add Movie Rating</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="savedmovies.html">Saved Movies</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div name = "profile-body" class = "row" style = "padding:50px;">
+		<div name = "filler" class = "col">
+			
+		</div>
+		<div name = "user-info" class = "col">
+			<form name = "new-user-form" onsubmit = "return checkGenres()" method="post">
+				<div name = "new-user-form-genre-1" class = "form-group">
+					<label for="genre1">Select a movie genre you prefer:</label>
+					<select multiple name = "genre1" class="form-control" id="genre1" required>
+						<option value="Adventure">Adventure</option>
+						<option value="Animation">Animation</option>
+						<option value="Children">Children</option>
+						<option value="Comedy">Comedy</option>
+						<option value="Crime">Crime</option>
+						<option value="Documentary">Documentary</option>
+						<option value="Drama">Drama</option>
+						<option value="Fantasy">Fantasy</option>
+						<option value="Film-Noir">Film-Noir</option>
+						<option value="Horror">Horror</option>
+						<option value="Musical">Musical</option>
+						<option value="Mystery">Mystery</option>
+						<option value="Romance">Romance</option>
+						<option value="Sci-Fi">Sci-Fi</option>
+						<option value="Thriller">Thriller</option>
+						<option value="War">War</option>
+						<option value="Western">Western</option>
+					</select>
+				</div>
+				<div name = "new-user-form-genre-2" class = "form-group">
+					<label for="genre2">Select a different movie genre you prefer:</label>
+					<select multiple name = "genre2" class="form-control" id="genre2" required>
+						<option value="Adventure">Adventure</option>
+						<option value="Animation">Animation</option>
+						<option value="Children">Children</option>
+						<option value="Comedy">Comedy</option>
+						<option value="Crime">Crime</option>
+						<option value="Documentary">Documentary</option>
+						<option value="Drama">Drama</option>
+						<option value="Fantasy">Fantasy</option>
+						<option value="Film-Noir">Film-Noir</option>
+						<option value="Horror">Horror</option>
+						<option value="Musical">Musical</option>
+						<option value="Mystery">Mystery</option>
+						<option value="Romance">Romance</option>
+						<option value="Sci-Fi">Sci-Fi</option>
+						<option value="Thriller">Thriller</option>
+						<option value="War">War</option>
+						<option value="Western">Western</option>
+					</select>
+				</div>
+				<button type = "submit" class="btn btn-primary btn-lg">Submit</button>
+			</form>
+		</div>
+		<div name = "filler" class = "col">
+		</div>
+	</div>
+</body>
+</html>

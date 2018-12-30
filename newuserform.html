@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Movie Recommender</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			function checkGenres()
+			{
+				var genre1 = document.forms["new-user-form"]["genre1"].value;
+				var genre2 = document.forms["new-user-form"]["genre2"].value;
+				if(genre1 == genre2)
+				{
+					alert("Please select two unique genres.");
+					return false;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div name = "top-section">
+			<div name = "home-button"  class = "container text-center" style = "padding-top:25px;">
+				<h2>Movie Recommender</h2>
+			</div>
+			<!-- HIDE THIS IF THE USER IS NOT LOGGED IN-->
+			<div name = "logout">
+				<div name = "logout-button" class = "container text-right" style = "padding-bottom:25px;">
+					<a href = "logout" class="btn btn-primary">Log out</a>
+					</div>
+				</div>
+			</div>
+			<div name = "taskbar">
+				<nav class="navbar navbar-expand-sm bg-light justify-content-center">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="profile.html">My Profile</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="recommendations.html">Recommendations</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="modifyrating.html">Add Movie Rating</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="savedmovies.html">Saved Movies</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<div name = "new-user-body" class = "container" style = "padding:50px;min-width:25%;max-width:50%;">
+			<div name = "form-div" class = "text-center" style = "padding-bottom:20px;">
+				<form name = "new-user-form" onsubmit = "return checkGenres()" method="post">
+					<div name = "new-user-form-genre-1" class = "form-group">
+						<label for="genre1">Select a movie genre you prefer:</label>
+						<select multiple name = "genre1" class="form-control" id="genre1" required>
+							<option value="Adventure">Adventure</option>
+							<option value="Animation">Animation</option>
+							<option value="Children">Children</option>
+							<option value="Comedy">Comedy</option>
+							<option value="Crime">Crime</option>
+							<option value="Documentary">Documentary</option>
+							<option value="Drama">Drama</option>
+							<option value="Fantasy">Fantasy</option>
+							<option value="Film-Noir">Film-Noir</option>
+							<option value="Horror">Horror</option>
+							<option value="Musical">Musical</option>
+							<option value="Mystery">Mystery</option>
+							<option value="Romance">Romance</option>
+							<option value="Sci-Fi">Sci-Fi</option>
+							<option value="Thriller">Thriller</option>
+							<option value="War">War</option>
+							<option value="Western">Western</option>
+						</select>
+					</div>
+					<div name = "new-user-form-genre-2" class = "form-group">
+						<label for="genre2">Select a different movie genre you prefer:</label>
+						<select multiple name = "genre2" class="form-control" id="genre2" required>
+							<option value="Adventure">Adventure</option>
+							<option value="Animation">Animation</option>
+							<option value="Children">Children</option>
+							<option value="Comedy">Comedy</option>
+							<option value="Crime">Crime</option>
+							<option value="Documentary">Documentary</option>
+							<option value="Drama">Drama</option>
+							<option value="Fantasy">Fantasy</option>
+							<option value="Film-Noir">Film-Noir</option>
+							<option value="Horror">Horror</option>
+							<option value="Musical">Musical</option>
+							<option value="Mystery">Mystery</option>
+							<option value="Romance">Romance</option>
+							<option value="Sci-Fi">Sci-Fi</option>
+							<option value="Thriller">Thriller</option>
+							<option value="War">War</option>
+							<option value="Western">Western</option>
+						</select>
+					</div>
+					<div name = "profile-pref" class = "form-group">
+						<h3>Please rate the following movies (0 if you have not seen it):<br><br></h3>
+						<div name = "movie1">
+							<h5>Toy Story (1995)</h5>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" checked="checked"  class="custom-control-input" id="r0" name="movie1-rating" value="0">
+								<label class="custom-control-label" for="r0">0</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r1" name="movie1-rating" value="1">
+								<label class="custom-control-label" for="r1">1</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r2" name="movie1-rating" value="2">
+								<label class="custom-control-label" for="r2">2</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r3" name="movie1-rating" value="3">
+								<label class="custom-control-label" for="r3">3</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r4" name="movie1-rating" value="4">
+								<label class="custom-control-label" for="r4">4</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r5" name="movie1-rating" value="5">
+								<label class="custom-control-label" for="r5">5</label>
+							</div>
+						</div>
+						<div name = "movie2">
+							<h5>Jumanji (1995)</h5>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" checked="checked"  class="custom-control-input" id="r10" name="movie2-rating" value="0">
+								<label class="custom-control-label" for="r10">0</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r11" name="movie2-rating" value="1">
+								<label class="custom-control-label" for="r11">1</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r12" name="movie2-rating" value="2">
+								<label class="custom-control-label" for="r12">2</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r13" name="movie2-rating" value="3">
+								<label class="custom-control-label" for="r13">3</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r14" name="movie2-rating" value="4">
+								<label class="custom-control-label" for="r14">4</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r15" name="movie2-rating" value="5">
+								<label class="custom-control-label" for="r15">5</label>
+							</div>
+						</div>
+						<div name = "movie3">
+							<h5>Grumpier Old Men (1995)</h5>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" checked="checked"  class="custom-control-input" id="r20" name="movie3-rating" value="0">
+								<label class="custom-control-label" for="r20">0</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r21" name="movie3-rating" value="1">
+								<label class="custom-control-label" for="r21">1</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r22" name="movie3-rating" value="2">
+								<label class="custom-control-label" for="r22">2</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r23" name="movie3-rating" value="3">
+								<label class="custom-control-label" for="r23">3</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r24" name="movie3-rating" value="4">
+								<label class="custom-control-label" for="r24">4</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r25" name="movie3-rating" value="5">
+								<label class="custom-control-label" for="r25">5</label>
+							</div>
+						</div>
+						<div name = "movie4">
+							<h5>Waiting to Exhale (1995)</h5>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" checked="checked"  class="custom-control-input" id="r30" name="movie4-rating" value="0">
+								<label class="custom-control-label" for="r30">0</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r31" name="movie4-rating" value="1">
+								<label class="custom-control-label" for="r31">1</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r32" name="movie4-rating" value="2">
+								<label class="custom-control-label" for="r32">2</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r33" name="movie4-rating" value="3">
+								<label class="custom-control-label" for="r33">3</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r34" name="movie4-rating" value="4">
+								<label class="custom-control-label" for="r34">4</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r35" name="movie4-rating" value="5">
+								<label class="custom-control-label" for="r35">5</label>
+							</div>
+						</div>
+						<div name = "movie5">
+							<h5>Father of the Bride Part II (1995)</h5>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" checked="checked"  class="custom-control-input" id="r40" name="movie5-rating" value="0">
+								<label class="custom-control-label" for="r40">0</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r41" name="movie5-rating" value="1">
+								<label class="custom-control-label" for="r41">1</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r42" name="movie5-rating" value="2">
+								<label class="custom-control-label" for="r42">2</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r43" name="movie5-rating" value="3">
+								<label class="custom-control-label" for="r43">3</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r44" name="movie5-rating" value="4">
+								<label class="custom-control-label" for="r44">4</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r45" name="movie5-rating" value="5">
+								<label class="custom-control-label" for="r45">5</label>
+							</div>
+						</div>
+						<div name = "movie6">
+							<h5>Heat (1995)</h5>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" checked="checked"  class="custom-control-input" id="r50" name="movie6-rating" value="0">
+								<label class="custom-control-label" for="r50">0</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r51" name="movie6-rating" value="1">
+								<label class="custom-control-label" for="r51">1</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r52" name="movie6-rating" value="2">
+								<label class="custom-control-label" for="r52">2</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r53" name="movie6-rating" value="3">
+								<label class="custom-control-label" for="r53">3</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r54" name="movie6-rating" value="4">
+								<label class="custom-control-label" for="r54">4</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r55" name="movie6-rating" value="5">
+								<label class="custom-control-label" for="r55">5</label>
+							</div>
+						</div>
+						<div name = "movie7">
+							<h5>Sabrina (1995)</h5>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" checked="checked"  class="custom-control-input" id="r60" name="movie7-rating" value="0">
+								<label class="custom-control-label" for="r60">0</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r61" name="movie7-rating" value="1">
+								<label class="custom-control-label" for="r61">1</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r62" name="movie7-rating" value="2">
+								<label class="custom-control-label" for="r62">2</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r63" name="movie7-rating" value="3">
+								<label class="custom-control-label" for="r63">3</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r64" name="movie7-rating" value="4">
+								<label class="custom-control-label" for="r64">4</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r65" name="movie7-rating" value="5">
+								<label class="custom-control-label" for="r65">5</label>
+							</div>
+						</div>
+						<div name = "movie8">
+							<h5>Tom and Huck (1995</h5>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" checked="checked"  class="custom-control-input" id="r70" name="movie8-rating" value="0">
+								<label class="custom-control-label" for="r70">0</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r71" name="movie8-rating" value="1">
+								<label class="custom-control-label" for="r71">1</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r72" name="movie8-rating" value="2">
+								<label class="custom-control-label" for="r72">2</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r73" name="movie8-rating" value="3">
+								<label class="custom-control-label" for="r73">3</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r74" name="movie8-rating" value="4">
+								<label class="custom-control-label" for="r74">4</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r75" name="movie8-rating" value="5">
+								<label class="custom-control-label" for="r75">5</label>
+							</div>
+						</div>
+						<div name = "movie9">
+							<h5>Sudden Death (1995)</h5>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" checked="checked"  class="custom-control-input" id="r80" name="movie9-rating" value="0">
+								<label class="custom-control-label" for="r80">0</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r81" name="movie9-rating" value="1">
+								<label class="custom-control-label" for="r81">1</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r82" name="movie9-rating" value="2">
+								<label class="custom-control-label" for="r82">2</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r83" name="movie9-rating" value="3">
+								<label class="custom-control-label" for="r83">3</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r84" name="movie9-rating" value="4">
+								<label class="custom-control-label" for="r84">4</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r85" name="movie9-rating" value="5">
+								<label class="custom-control-label" for="r85">5</label>
+							</div>
+						</div>
+						<div name = "movie10">
+							<h5>GoldenEye (1995)</h5>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" checked="checked"  class="custom-control-input" id="r90" name="movie10-rating" value="0">
+								<label class="custom-control-label" for="r90">0</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r91" name="movie10-rating" value="1">
+								<label class="custom-control-label" for="r91">1</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r92" name="movie10-rating" value="2">
+								<label class="custom-control-label" for="r92">2</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r93" name="movie10-rating" value="3">
+								<label class="custom-control-label" for="r93">3</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r94" name="movie10-rating" value="4">
+								<label class="custom-control-label" for="r94">4</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r95" name="movie10-rating" value="5">
+								<label class="custom-control-label" for="r95">5</label>
+							</div>
+						</div>
+						<div name = "movie11">
+							<h5>The American President(1995)</h5>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" checked="checked"  class="custom-control-input" id="r100" name="movie11-rating" value="0">
+								<label class="custom-control-label" for="r100">0</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r101" name="movie11-rating" value="1">
+								<label class="custom-control-label" for="r101">1</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r102" name="movie11-rating" value="2">
+								<label class="custom-control-label" for="r102">2</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r103" name="movie11-rating" value="3">
+								<label class="custom-control-label" for="r103">3</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r104" name="movie11-rating" value="4">
+								<label class="custom-control-label" for="r104">4</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r105" name="movie11-rating" value="5">
+								<label class="custom-control-label" for="r105">5</label>
+							</div>
+						</div>
+						<div name = "movie12">
+							<h5>Dracula: Dead and Loving It (1995)</h5>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" checked="checked"  class="custom-control-input" id="r110" name="movie12-rating" value="0">
+								<label class="custom-control-label" for="r110">0</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r111" name="movie12-rating" value="1">
+								<label class="custom-control-label" for="r111">1</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r112" name="movie12-rating" value="2">
+								<label class="custom-control-label" for="r112">2</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r113" name="movie12-rating" value="3">
+								<label class="custom-control-label" for="r113">3</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r114" name="movie12-rating" value="4">
+								<label class="custom-control-label" for="r114">4</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r115" name="movie12-rating" value="5">
+								<label class="custom-control-label" for="r115">5</label>
+							</div>
+						</div>
+						<div name = "movie13">
+							<h5>Balto (1995)</h5>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" checked="checked"  class="custom-control-input" id="r120" name="movie13-rating" value="0">
+								<label class="custom-control-label" for="r120">0</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r121" name="movie13-rating" value="1">
+								<label class="custom-control-label" for="r121">1</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r122" name="movie13-rating" value="2">
+								<label class="custom-control-label" for="r122">2</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r123" name="movie13-rating" value="3">
+								<label class="custom-control-label" for="r123">3</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r124" name="movie13-rating" value="4">
+								<label class="custom-control-label" for="r124">4</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r125" name="movie13-rating" value="5">
+								<label class="custom-control-label" for="r125">5</label>
+							</div>
+						</div>
+						<div name = "movie14">
+							<h5>Nixon (1995)</h5>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" checked="checked"  class="custom-control-input" id="r130" name="movie14-rating" value="0">
+								<label class="custom-control-label" for="r130">0</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r131" name="movie14-rating" value="1">
+								<label class="custom-control-label" for="r131">1</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r132" name="movie14-rating" value="2">
+								<label class="custom-control-label" for="r132">2</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r133" name="movie14-rating" value="3">
+								<label class="custom-control-label" for="r133">3</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r134" name="movie14-rating" value="4">
+								<label class="custom-control-label" for="r134">4</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r135" name="movie14-rating" value="5">
+								<label class="custom-control-label" for="r135">5</label>
+							</div>
+						</div>
+						<div name = "movie15">
+							<h5>Cutthroat Island (1995)</h5>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio" checked="checked"  class="custom-control-input" id="r140" name="movie15-rating" value="0">
+								<label class="custom-control-label" for="r140">0</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r141" name="movie15-rating" value="1">
+								<label class="custom-control-label" for="r141">1</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r142" name="movie15-rating" value="2">
+								<label class="custom-control-label" for="r142">2</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r143" name="movie15-rating" value="3">
+								<label class="custom-control-label" for="r143">3</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r144" name="movie15-rating" value="4">
+								<label class="custom-control-label" for="r144">4</label>
+							</div>
+							<div class="custom-control custom-radio custom-control-inline">
+								<input type="radio"  class="custom-control-input" id="r145" name="movie15-rating" value="5">
+								<label class="custom-control-label" for="r145">5</label>
+							</div>
+						</div>
+					</div>
+					<button type = "submit" class="btn btn-primary btn-lg">Submit</button>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>
