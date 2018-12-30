@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Movie Recommender</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div name = "top-section">
+			<div name = "home-button"  class = "container text-center" style = "padding-top:25px;">
+				<h2>Movie Recommender</h2>
+			</div>
+			<!-- HIDE THIS IF THE USER IS NOT LOGGED IN-->
+			<div name = "logout">
+				<div name = "logout-button" class = "container text-right" style = "padding-bottom:25px;">
+					<a href = "logout" class="btn btn-primary">Log out</a>
+					</div>
+				</div>
+			</div>
+			<div name = "taskbar">
+				<nav class="navbar navbar-expand-sm bg-light justify-content-center">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="profile.html">My Profile</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="recommendations.html">Recommendations</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="modifyrating.html">Add Movie Rating</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="savedmovies.html">Saved Movies</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+		<div name = "rate-movies-body" class = "row" style = "padding:50px;">
+			<div name = "filler" class = "col"></div>
+			<div name = "rate-movie-form-div" class = "text-center" style = "padding-bottom:20px;">
+				<form method = "post">
+					<div name = "rate-movie-form-name" class = "form-group">
+						<input type = "textfield" class = "form-control" id = "movietitle" name = "movietitle" placeholder="Movie Title">
+					</div>
+					<!-- DO THIS WITH VELOCITY LATER? -->
+					<div name = "rate-movie-form-ratings" class = "form-group">
+						<div name = "rate-movie-form-rating" class = "form-check-inline">
+							<label class="form-check-label" for = "r0">
+								<input type = "radio"  class="form-check-input" name="rating" id = "r0" value = "0" checked="checked"> 0
+							</label>
+						</div>
+						<div name = "rate-movie-form-rating" class = "form-check-inline">
+							<label class="form-check-label" for = "r1">
+								<input type = "radio"  class="form-check-input" name="rating" id = "r1" value = "1"> 1
+							</label>
+						</div>
+						<div name = "rate-movie-form-rating" class = "form-check-inline">
+							<label class="form-check-label" for = "r2">
+								<input type = "radio"  class="form-check-input" name="rating" id = "r2" value = "2"> 2
+							</label>
+						</div>
+						<div name = "rate-movie-form-rating" class = "form-check-inline">
+							<label class="form-check-label" for = "r3">
+								<input type = "radio"  class="form-check-input" name="rating" id = "r3" value = "3"> 3
+							</label>
+						</div>
+						<div name = "rate-movie-form-rating" class = "form-check-inline">
+							<label class="form-check-label" for = "r4">
+								<input type = "radio"  class="form-check-input" name="rating" id = "r4" value = "4"> 4
+							</label>
+						</div>
+						<div name = "rate-movie-form-rating" class = "form-check-inline">
+							<label class="form-check-label" for = "r5">
+								<input type = "radio"  class="form-check-input" name="rating" id = "r5" value = "5" > 5
+							</label>
+						</div>
+					</div>
+					<button type = "submit" class="btn btn-primary btn-lg">Rate it!</button>
+				</form>
+			</div>
+			<div name = "filler" class = "col"></div>
+		</div>
+	</body>
+</html>
